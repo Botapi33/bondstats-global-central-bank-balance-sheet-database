@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "title": "Global Central Bank Balance Sheet Database",
+  "banks": [
+    {
+      "slug": "federal-reserve",
+      "short": "Fed",
+      "name": "Federal Reserve",
+      "jurisdiction": "United States",
+      "currency": "USD",
+      "unit": "USD millions",
+      "frequency": "Weekly → month-end snapshot",
+      "source": "Board of Governors of the Federal Reserve System / FRED",
+      "series": "WALCL",
+      "start": "2002-12",
+      "official": "https://www.federalreserve.gov/releases/h41/",
+      "data": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=WALCL",
+      "note": "Total assets less eliminations from consolidation. Weekly Wednesday observations; BondStats comparison uses the last observation in each month."
+    },
+    {
+      "slug": "ecb",
+      "short": "ECB",
+      "name": "European Central Bank / Eurosystem",
+      "jurisdiction": "Euro area",
+      "currency": "EUR",
+      "unit": "EUR millions",
+      "frequency": "Monthly",
+      "source": "ECB Data Portal",
+      "series": "BSI.M.U2.N.C.T00.A.1.Z5.0000.Z01.E",
+      "start": "1999-01",
+      "official": "https://data.ecb.europa.eu/data/data-categories/ecbeurosystem-policy-and-exchange-rates/eurosystem-balance-sheet",
+      "data": "https://data-api.ecb.europa.eu/service/data/BSI/M.U2.N.C.T00.A.1.Z5.0000.Z01.E?format=csvdata&startPeriod=1999-01",
+      "note": "Total assets of the Eurosystem, outstanding amounts at end of period."
+    },
+    {
+      "slug": "boj",
+      "short": "BoJ",
+      "name": "Bank of Japan",
+      "jurisdiction": "Japan",
+      "currency": "JPY",
+      "unit": "JPY 100 million",
+      "frequency": "Monthly",
+      "source": "Bank of Japan Time-Series Data Search API",
+      "series": "Resolved from BOJ BS metadata",
+      "start": "1998-04",
+      "official": "https://www.stat-search.boj.or.jp/index_en.html",
+      "data": "https://www.stat-search.boj.or.jp/api/v1/getMetadata?format=json&lang=en&db=BS",
+      "note": "The updater resolves the current BOJ total-assets series from official BS metadata before requesting observations; no vendor database is bundled."
+    },
+    {
+      "slug": "boe",
+      "short": "BoE",
+      "name": "Bank of England",
+      "jurisdiction": "United Kingdom",
+      "currency": "GBP",
+      "unit": "GBP millions",
+      "frequency": "Weekly → month-end snapshot",
+      "source": "Bank of England IADB",
+      "series": "RPWB75A",
+      "start": "2006-01",
+      "official": "https://www.bankofengland.co.uk/boeapps/database/",
+      "data": "https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/2006&Dateto=now&SeriesCodes=RPWB75A&CSVF=TN&UsingCodes=Y&VPD=Y&VFD=N",
+      "note": "Weekly Central Bank assets total. BondStats comparison uses the last observation in each month."
+    },
+    {
+      "slug": "snb",
+      "short": "SNB",
+      "name": "Swiss National Bank",
+      "jurisdiction": "Switzerland",
+      "currency": "CHF",
+      "unit": "CHF millions",
+      "frequency": "Monthly",
+      "source": "SNB Data Portal API",
+      "series": "snbbipo / D0(T0)",
+      "start": "2008-01",
+      "official": "https://data.snb.ch/en/topics/snb/cube/snbbipo",
+      "data": "https://data.snb.ch/api/cube/snbbipo/data/csv/en?dimSel=D0(T0)&fromDate=2008-01",
+      "note": "Total balance-sheet position from the SNB balance-sheet-items cube. Values are used with source attribution and no third-party chart or branded interface."
+    }
+  ]
+}

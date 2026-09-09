@@ -1,0 +1,82 @@
+{
+  "generatedAt": null,
+  "status": "awaiting-source-sync",
+  "methodology": {
+    "comparison": "Native-currency balance sheets are not converted into one currency. Cross-bank comparison uses an indexed series (100 at each selected comparison start).",
+    "monthly": "Weekly series are reduced to the final available observation in each calendar month.",
+    "revisions": "Official-source revisions replace prior observations on the next successful sync.",
+    "failure": "Updater preserves the last successful bank series if one source temporarily fails."
+  },
+  "banks": {
+    "federal-reserve": {
+      "slug": "federal-reserve",
+      "name": "Federal Reserve",
+      "short": "Fed",
+      "currency": "USD",
+      "unit": "USD millions",
+      "frequency": "Weekly → month-end snapshot",
+      "series": "WALCL",
+      "source": "Board of Governors of the Federal Reserve System / FRED",
+      "official": "https://www.federalreserve.gov/releases/h41/",
+      "observations": [],
+      "lastUpdated": null,
+      "sourceStatus": "awaiting-sync"
+    },
+    "ecb": {
+      "slug": "ecb",
+      "name": "European Central Bank / Eurosystem",
+      "short": "ECB",
+      "currency": "EUR",
+      "unit": "EUR millions",
+      "frequency": "Monthly",
+      "series": "BSI.M.U2.N.C.T00.A.1.Z5.0000.Z01.E",
+      "source": "ECB Data Portal",
+      "official": "https://data.ecb.europa.eu/data/data-categories/ecbeurosystem-policy-and-exchange-rates/eurosystem-balance-sheet",
+      "observations": [],
+      "lastUpdated": null,
+      "sourceStatus": "awaiting-sync"
+    },
+    "boj": {
+      "slug": "boj",
+      "name": "Bank of Japan",
+      "short": "BoJ",
+      "currency": "JPY",
+      "unit": "JPY 100 million",
+      "frequency": "Monthly",
+      "series": "Resolved from BOJ BS metadata",
+      "source": "Bank of Japan Time-Series Data Search API",
+      "official": "https://www.stat-search.boj.or.jp/index_en.html",
+      "observations": [],
+      "lastUpdated": null,
+      "sourceStatus": "awaiting-sync"
+    },
+    "boe": {
+      "slug": "boe",
+      "name": "Bank of England",
+      "short": "BoE",
+      "currency": "GBP",
+      "unit": "GBP millions",
+      "frequency": "Weekly → month-end snapshot",
+      "series": "RPWB75A",
+      "source": "Bank of England IADB",
+      "official": "https://www.bankofengland.co.uk/boeapps/database/",
+      "observations": [],
+      "lastUpdated": null,
+      "sourceStatus": "awaiting-sync"
+    },
+    "snb": {
+      "slug": "snb",
+      "name": "Swiss National Bank",
+      "short": "SNB",
+      "currency": "CHF",
+      "unit": "CHF millions",
+      "frequency": "Monthly",
+      "series": "snbbipo / D0(T0)",
+      "source": "SNB Data Portal API",
+      "official": "https://data.snb.ch/en/topics/snb/cube/snbbipo",
+      "observations": [],
+      "lastUpdated": null,
+      "sourceStatus": "awaiting-sync"
+    }
+  }
+}
