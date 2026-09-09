@@ -1,0 +1,40 @@
+name: Central Bank Balance Sheet Sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 4 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Update official-source balance-sheet database
+        run: node scripts/update-central-bank-balance-sheets.mjs
+
+      - name: Commit changed data
+        run: |
+          if git diff --quiet -- data/central-bank-balance-sheets.json; then
+            echo "No data changes."
+            exit 0
+          fi
+
+          git config user.name "bondstats-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+
+          git add data/central-bank-balance-sheets.json
+          git commit -m "data: update central bank balance sheets"
+          git push
