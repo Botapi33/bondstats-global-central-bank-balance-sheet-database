@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T23:09:55.123Z",
+  "generatedAt": "2026-09-09T23:13:35.508Z",
   "status": "partial",
   "methodology": {
     "comparison": "Native-currency balance sheets are not converted into one currency. Cross-bank comparison uses an indexed series (100 at each selected comparison start).",
@@ -2520,7 +2520,7 @@
       "lastUpdated": null,
       "sourceStatus": "stale",
       "lastError": "400 Bad Request — https://www.stat-search.boj.or.jp/api/v1/getMetadata?format=json&lang=en&db=BS",
-      "checkedAt": "2026-09-09T23:09:57.778Z"
+      "checkedAt": "2026-09-09T23:13:38.832Z"
     },
     "boe": {
       "slug": "boe",
