@@ -1,11 +1,12 @@
 {
-  "generatedAt": "2026-09-09T23:15:05.027Z",
+  "generatedAt": "2026-09-09T23:25:42.773Z",
   "status": "partial",
   "methodology": {
-    "comparison": "Native-currency balance sheets are not converted into one currency. Cross-bank comparison uses an indexed series (100 at each selected comparison start).",
-    "monthly": "Weekly series are reduced to the final available observation in each calendar month.",
-    "revisions": "Official-source revisions replace prior observations on the next successful sync.",
-    "failure": "Updater preserves the last successful bank series if one source temporarily fails."
+    "comparison": "Cross-bank level comparison uses an index rebased to 100 at the selected window start. Native currencies are never added together.",
+    "impulse": "The 12M impulse is the percentage change versus the observation 12 calendar months earlier.",
+    "monthly": "Higher-frequency series are reduced to the final usable observation in each calendar month.",
+    "revisions": "Official-source revisions replace earlier stored observations on the next successful sync.",
+    "failure": "A bank retains its previous successful history and is marked stale if its source temporarily fails."
   },
   "banks": {
     "federal-reserve": {
@@ -2519,8 +2520,8 @@
       "observations": [],
       "lastUpdated": null,
       "sourceStatus": "stale",
-      "lastError": "400 Bad Request — https://www.stat-search.boj.or.jp/api/v1/getMetadata?format=json&lang=en&db=BS",
-      "checkedAt": "2026-09-09T23:15:07.964Z"
+      "lastError": "BOJ series MABJMTA returned no usable observations",
+      "checkedAt": "2026-09-09T23:25:46.142Z"
     },
     "boe": {
       "slug": "boe",
