@@ -171,3 +171,7 @@ for(const b0 of REG.banks){
 if(failures) result.status=failures===REG.banks.length?'error':'partial';
 await fs.writeFile(OUT, JSON.stringify(result,null,2)+'\n');
 console.log(`Wrote ${OUT.pathname}; status=${result.status}; source failures=${failures}`);
+if (failures === REG.banks.length) {
+  console.error('All configured central-bank sources failed. Marking workflow as failed so a green run can no longer hide an empty database.');
+  process.exitCode = 1;
+}
