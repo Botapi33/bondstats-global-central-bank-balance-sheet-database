@@ -41,11 +41,11 @@
       "unit": "JPY 100 million",
       "frequency": "Monthly",
       "source": "Bank of Japan Time-Series Data Search API",
-      "series": "Resolved from BOJ BS metadata",
+      "series": "Resolved from BOJ BS01 metadata",
       "start": "1998-04",
       "official": "https://www.stat-search.boj.or.jp/index_en.html",
-      "data": "https://www.stat-search.boj.or.jp/api/v1/getMetadata?format=json&lang=en&db=BS",
-      "note": "The updater resolves the current BOJ total-assets series from official BS metadata before requesting observations; no vendor database is bundled."
+      "data": "https://www.stat-search.boj.or.jp/api/v1/getMetadata?format=json&lang=en&db=BS01",
+      "note": "Monthly total assets from the official Bank of Japan Accounts database (BS01). The updater resolves the total-assets series code from current BOJ metadata before fetching observations."
     },
     {
       "slug": "boe",
@@ -59,8 +59,8 @@
       "series": "RPWB75A",
       "start": "2006-01",
       "official": "https://www.bankofengland.co.uk/boeapps/database/",
-      "data": "https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/2006&Dateto=now&SeriesCodes=RPWB75A&CSVF=TN&UsingCodes=Y&VPD=Y&VFD=N",
-      "note": "Weekly Central Bank assets total. BondStats comparison uses the last observation in each month."
+      "data": "https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/2006&Dateto=now&SeriesCodes=RPWB75A&CSVF=CN&UsingCodes=Y&VPD=Y&VFD=N",
+      "note": "Weekly amounts outstanding of Central Bank assets total (RPWB75A). BondStats reduces the official weekly series to the last available observation in each month."
     },
     {
       "slug": "snb",

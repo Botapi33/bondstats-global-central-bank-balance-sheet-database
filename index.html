@@ -4,106 +4,113 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>Global Central Bank Balance Sheet Database | BondStats</title>
-<meta name="description" content="Historical balance-sheet comparison for the Federal Reserve, ECB/Eurosystem, Bank of Japan, Bank of England and Swiss National Bank.">
+<meta name="description" content="Source-linked historical balance-sheet data for the Federal Reserve, ECB/Eurosystem, Bank of Japan, Bank of England and Swiss National Bank.">
 <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 <header class="mast">
   <div class="shell mast-inner">
     <a class="brand" href="https://www.bondstats.org/" target="_blank" rel="noopener">Bond<span>Stats</span></a>
-    <div class="mast-meta"><span class="pulse"></span><span id="syncState">official-source database</span></div>
+    <div class="mast-right">
+      <span class="source-light"></span>
+      <span id="syncState">loading database</span>
+    </div>
   </div>
 </header>
 
 <main>
-<section class="hero">
-  <div class="shell hero-grid">
+<section class="intro">
+  <div class="shell intro-grid">
     <div>
-      <div class="eyebrow">CENTRAL BANKS / BALANCE SHEET INTELLIGENCE</div>
-      <h1>Follow the monetary<br><em>footprint.</em></h1>
-      <p class="lede">A source-linked historical record of how major central-bank balance sheets expanded, peaked and contracted across QE, emergency liquidity and QT regimes.</p>
+      <div class="overline">CENTRAL BANK DATA / HISTORICAL BALANCE SHEETS</div>
+      <h1>Global Central Bank<br>Balance Sheets</h1>
     </div>
-    <aside class="hero-aside">
-      <div class="aside-label">DATABASE COVERAGE</div>
-      <div class="coverage" id="coverage">Fed · ECB · BoJ · BoE · SNB</div>
-      <div class="aside-rule"></div>
-      <div class="aside-copy">Cross-bank comparisons are indexed to 100. Native-currency values stay on source records. No FX conversion is used to manufacture comparability.</div>
-    </aside>
-  </div>
-</section>
-
-<section class="institution-rail">
-  <div class="shell" id="tabs"></div>
-</section>
-
-<section class="workspace">
-  <div class="shell">
-    <div class="workspace-head">
-      <div>
-        <div class="eyebrow">GLOBAL COMPARISON</div>
-        <h2>Balance-sheet regime map</h2>
-      </div>
-      <div class="sync-block">
-        <span>DATA SNAPSHOT</span>
-        <strong id="lastSync">checking…</strong>
-      </div>
-    </div>
-
-    <div class="terminal">
-      <div class="terminal-top">
-        <div class="view-controls">
-          <button data-years="5" class="active">5Y</button>
-          <button data-years="10">10Y</button>
-          <button data-years="20">20Y</button>
-          <button data-years="0">MAX</button>
-        </div>
-        <div class="terminal-note">INDEXED · START = 100</div>
-      </div>
-
-      <div class="plot-shell">
-        <svg id="chart" role="img" aria-label="Indexed historical central bank balance sheet comparison"></svg>
-        <div id="emptyState" class="empty-state" hidden>
-          <strong>No observations loaded.</strong>
-          <span>The source sync completed without usable series data. Open the workflow log; the database will not display fabricated fallback values.</span>
-        </div>
-      </div>
-
-      <div class="legend-ledger" id="legend"></div>
+    <div class="intro-note">
+      <p>Track the size and direction of the Fed, Eurosystem, Bank of Japan, Bank of England and Swiss National Bank balance sheets through QE, emergency expansion and runoff.</p>
+      <div class="meta-line"><span>5 institutions</span><span>monthly aligned</span><span>source linked</span></div>
     </div>
   </div>
 </section>
 
-<section class="records">
+<section class="atlas">
   <div class="shell">
-    <div class="section-intro">
+    <div class="atlas-head">
       <div>
-        <div class="eyebrow">SOURCE RECORDS</div>
-        <h2>Five institutions. Five native balance sheets.</h2>
+        <div class="overline">BALANCE SHEET ATLAS</div>
+        <h2>One timeline. Two analytical lenses.</h2>
       </div>
-      <p>Each row exposes the source, series identifier, native reporting unit, latest stored observation and source health. The comparison chart above is derived locally from these records.</p>
+      <div class="snapshot"><span>DATA SNAPSHOT</span><strong id="lastSync">—</strong></div>
+    </div>
+
+    <div class="atlas-grid">
+      <aside class="institution-list" id="institutionList" aria-label="Central bank series"></aside>
+
+      <div class="chart-panel">
+        <div class="chart-toolbar">
+          <div class="mode-switch" aria-label="Chart mode">
+            <button data-mode="level" class="active">Indexed level</button>
+            <button data-mode="impulse">12M impulse</button>
+          </div>
+          <div class="period-switch" aria-label="Chart period">
+            <button data-years="5" class="active">5Y</button>
+            <button data-years="10">10Y</button>
+            <button data-years="20">20Y</button>
+            <button data-years="0">MAX</button>
+          </div>
+        </div>
+
+        <div class="chart-caption">
+          <div id="chartMeasure">Index · selected-window start = 100</div>
+          <div id="hoverDate">Move across chart for values</div>
+        </div>
+
+        <div class="plot-shell">
+          <svg id="chart" role="img" aria-label="Central bank balance sheet comparison"></svg>
+          <div id="emptyState" class="empty-state" hidden>
+            <strong>No usable observations.</strong>
+            <span>The database is not going to invent a fallback series. Check the source-status ledger below.</span>
+          </div>
+          <div id="tooltip" class="tooltip" hidden></div>
+        </div>
+
+        <div class="breadth">
+          <div class="breadth-title">GLOBAL BALANCE-SHEET BREADTH</div>
+          <div class="breadth-track"><div id="breadthFill" class="breadth-fill"></div></div>
+          <div class="breadth-copy" id="breadthCopy">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pulse-ledger" id="pulseLedger"></div>
+  </div>
+</section>
+
+<section class="source-section">
+  <div class="shell">
+    <div class="source-head">
+      <div><div class="overline">SOURCE LEDGER</div><h2>Native records behind the comparison.</h2></div>
+      <p>No cross-currency total is shown. Every institution remains in its published unit, with series code, latest observation and health status visible.</p>
     </div>
     <div class="record-table">
-      <div class="record-head"><span>Bank</span><span>Series / unit</span><span>Latest</span><span>Status</span><span></span></div>
-      <div id="ledger"></div>
+      <div class="record-header"><span>Institution</span><span>Series</span><span>Latest stored observation</span><span>12M</span><span>Health</span><span></span></div>
+      <div id="sourceLedger"></div>
     </div>
   </div>
 </section>
 
-<section class="methodology">
-  <div class="shell methodology-grid">
-    <div>
-      <div class="eyebrow">METHODOLOGY</div>
-      <h2>Comparable without false precision.</h2>
-    </div>
-    <div class="method-copy">
-      <p><strong>Monthly alignment.</strong> Higher-frequency series are reduced to the final available observation in each calendar month for the global comparison.</p>
-      <p><strong>Indexed comparison.</strong> USD, EUR, JPY, GBP and CHF balance sheets are never added together. Each selected series begins at 100 so relative expansion and contraction can be compared.</p>
-      <p><strong>Copyright-safe presentation.</strong> BondStats renders original charts and interface code. No central-bank logos, copied charts, screenshots or vendor interfaces are reproduced.</p>
+<section class="method">
+  <div class="shell method-grid">
+    <div><div class="overline">METHOD</div><h2>Built to compare direction, not fake precision.</h2></div>
+    <div class="method-lines">
+      <p><b>Indexed level</b><span>Rebases each visible series to 100 at the beginning of the selected window.</span></p>
+      <p><b>12M impulse</b><span>Shows the year-over-year percentage change in each native balance sheet.</span></p>
+      <p><b>Source discipline</b><span>BondStats draws its own interface and charts; no central-bank logos, screenshots or copied chart designs are used.</span></p>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="shell">BondStats · Global Central Bank Balance Sheet Database · Source-linked research infrastructure</div></footer>
+<footer><div class="shell">BondStats · Global Central Bank Balance Sheet Database · Research use · Primary-source links retained</div></footer>
 <script src="./app.js"></script>
-</body></html>
+</body>
+</html>
