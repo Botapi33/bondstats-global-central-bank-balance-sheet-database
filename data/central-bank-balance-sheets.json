@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T10:38:46.045Z",
+  "generatedAt": "2026-10-05T11:37:23.059Z",
   "status": "partial",
   "methodology": {
     "comparison": "Cross-bank level comparison uses an index rebased to 100 at the selected window start. Native currencies are never added together.",
@@ -2509,9 +2509,7 @@
         }
       ],
       "lastUpdated": "2026-08",
-      "sourceStatus": "stale",
-      "lastError": "504 Gateway Time-out — https://data-api.ecb.europa.eu/service/data/BSI/M.U2.N.C.T00.A.1.Z5.0000.Z01.E?format=csvdata&startPeriod=1999-01",
-      "checkedAt": "2026-10-04T10:39:17.588Z"
+      "sourceStatus": "ok"
     },
     "boj": {
       "slug": "boj",
@@ -2527,7 +2525,7 @@
       "lastUpdated": null,
       "sourceStatus": "stale",
       "lastError": "BOJ series MABJMTA returned no usable observations",
-      "checkedAt": "2026-10-04T10:39:19.086Z"
+      "checkedAt": "2026-10-05T11:37:27.332Z"
     },
     "boe": {
       "slug": "boe",
