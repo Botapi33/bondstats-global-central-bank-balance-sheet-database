@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T11:23:18.074Z",
+  "generatedAt": "2026-10-10T10:40:32.415Z",
   "status": "partial",
   "methodology": {
     "comparison": "Cross-bank level comparison uses an index rebased to 100 at the selected window start. Native currencies are never added together.",
@@ -1168,7 +1168,7 @@
       "lastUpdated": "2026-09",
       "sourceStatus": "stale",
       "lastError": "fetch failed",
-      "checkedAt": "2026-10-09T11:24:32.864Z"
+      "checkedAt": "2026-10-10T10:41:45.280Z"
     },
     "ecb": {
       "slug": "ecb",
@@ -2527,7 +2527,7 @@
       "lastUpdated": null,
       "sourceStatus": "stale",
       "lastError": "BOJ series MABJMTA returned no usable observations",
-      "checkedAt": "2026-10-09T11:24:36.523Z"
+      "checkedAt": "2026-10-10T10:41:49.292Z"
     },
     "boe": {
       "slug": "boe",
