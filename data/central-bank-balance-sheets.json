@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T12:36:32.740Z",
+  "generatedAt": "2026-11-03T12:02:14.109Z",
   "status": "partial",
   "methodology": {
     "comparison": "Cross-bank level comparison uses an index rebased to 100 at the selected window start. Native currencies are never added together.",
@@ -2517,7 +2517,9 @@
         }
       ],
       "lastUpdated": "2026-09",
-      "sourceStatus": "ok"
+      "sourceStatus": "stale",
+      "lastError": "500 Internal Server Error — https://data-api.ecb.europa.eu/service/data/BSI/M.U2.N.C.T00.A.1.Z5.0000.Z01.E?format=csvdata&startPeriod=1999-01",
+      "checkedAt": "2026-11-03T12:02:16.382Z"
     },
     "boj": {
       "slug": "boj",
@@ -2533,7 +2535,7 @@
       "lastUpdated": null,
       "sourceStatus": "stale",
       "lastError": "BOJ series MABJMTA returned no usable observations",
-      "checkedAt": "2026-11-02T12:36:36.542Z"
+      "checkedAt": "2026-11-03T12:02:17.925Z"
     },
     "boe": {
       "slug": "boe",
