@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T12:54:54.715Z",
+  "generatedAt": "2026-11-13T12:20:33.369Z",
   "status": "partial",
   "methodology": {
     "comparison": "Cross-bank level comparison uses an index rebased to 100 at the selected window start. Native currencies are never added together.",
@@ -1170,7 +1170,7 @@
         },
         {
           "date": "2026-11",
-          "value": 6748145
+          "value": 6758867
         }
       ],
       "lastUpdated": "2026-11",
@@ -2537,7 +2537,7 @@
       "lastUpdated": null,
       "sourceStatus": "stale",
       "lastError": "BOJ series MABJMTA returned no usable observations",
-      "checkedAt": "2026-11-12T12:55:18.717Z"
+      "checkedAt": "2026-11-13T12:20:38.039Z"
     },
     "boe": {
       "slug": "boe",
